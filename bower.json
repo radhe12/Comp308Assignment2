@@ -1,9 +1,9 @@
 {
-  "name": "comp308-w2017-lesson6b",
-  "description": "## Welcome to Lesson 6 - Authentication with Passport",
+  "name": "Assignment 2 ",
+  "description": "## Assignment 2 Authetication and CRUD",
   "main": "server.js",
   "authors": [
-    "Tom Tsiliopoulos"
+    "Radhey gor"
   ],
   "license": "ISC",
   "keywords": [
@@ -11,7 +11,7 @@
     "ExpressJS",
     "EJS"
   ],
-  "homepage": "https://github.com/CentennialCollege/COMP308-W2017-Lesson6B",
+  "homepage": "https://github.com/radhe12/Comp308Assignment2",
   "ignore": [
     "**/.*",
     "node_modules",

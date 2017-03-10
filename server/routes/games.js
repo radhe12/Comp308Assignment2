@@ -9,7 +9,7 @@ let UserModel = require('../models/users');
 let User = UserModel.User; // alias for User Model - User object
 
 // define the game model
-let game = require('../models/games');
+let contact = require('../models/games');
 
 // create a function to check if the user is authenticated
 function requireAuth(req, res, next) {
@@ -23,12 +23,12 @@ function requireAuth(req, res, next) {
 /* GET games List page. READ */
 router.get('/', requireAuth, (req, res, next) => {
   // find all games in the games collection
-  game.find( (err, games) => {
+  contact.find( (err, games) => {
     if (err) {
       return console.error(err);
     }
     else {
-      res.render('games/index', {
+      res.render('contactlists/index', {
         title: 'Games',
         games: games,
         displayName: req.user.displayName
@@ -40,7 +40,7 @@ router.get('/', requireAuth, (req, res, next) => {
 
 //  GET the Game Details page in order to add a new Game
 router.get('/add', requireAuth, (req, res, next) => {
-  res.render('games/details', {
+  res.render('contactlists/details', {
     title: "Add a new Game",
     games: '',
     displayName: req.user.displayName
@@ -80,8 +80,8 @@ router.get('/:id', requireAuth, (req, res, next) => {
           res.end(error);
         } else {
           // show the game details view
-          res.render('games/details', {
-              title: 'Game Details',
+          res.render('contactlists/details', {
+              title: 'Contact Details',
               games: games,
               displayName: req.user.displayName
           });
