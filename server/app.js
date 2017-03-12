@@ -1,4 +1,3 @@
-// modules required for the project
 let express = require('express');
 let path = require('path'); // part of node.js core
 let favicon = require('serve-favicon');
@@ -28,7 +27,7 @@ db.once('open', () => {
 
 // define routers
 let index = require('./routes/index'); // top level routes
-let games = require('./routes/games'); // routes for games
+let contacts = require('./routes/contactlist'); // routes for games
 
 let app = express();
 
@@ -42,7 +41,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // setup session
 app.use(session({
@@ -58,7 +57,7 @@ app.use(passport.session());
 
 // route redirects
 app.use('/', index);
-app.use('/games', games);
+app.use('/contactlist', contacts);
 
 // Passport User Configuration
 let UserModel = require('./models/users');

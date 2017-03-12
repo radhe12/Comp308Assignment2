@@ -3,11 +3,11 @@ let mongoose = require('mongoose');
 // create a model class
 let contactSchema = mongoose.Schema({
     name: String,
-    rating: Number,
-    cost: Number
+    number: Number,
+    email: String
 },
 {
   collection: "contactlist"
 });
 
-module.exports = mongoose.model('contactlist', contactSchema);
+module.exports = mongoose.model('contactlists', contactSchema);
