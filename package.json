@@ -1,5 +1,5 @@
 {
-  "name": "comp308-w2017-lesson6b",
+  "name": "assignment2-comp308",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -24,7 +24,7 @@
     "node": ">=6.0.0",
     "npm": ">=3.5.0"
   },
-  "description": "## Welcome to Lesson 6 - Authentication with Passport",
+  
   "main": "server.js",
   "devDependencies": {
     "@types/body-parser": "0.0.33",
@@ -40,20 +40,5 @@
     "@types/passport": "^0.3.3",
     "@types/passport-local": "^1.0.29",
     "@types/passport-local-mongoose": "^4.0.8"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CentennialCollege/COMP308-W2017-Lesson6B.git"
-  },
-  "keywords": [
-    "NodeJS",
-    "ExpressJS",
-    "EJS"
-  ],
-  "author": "Tom Tsiliopoulos",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CentennialCollege/COMP308-W2017-Lesson6B/issues"
-  },
-  "homepage": "https://github.com/CentennialCollege/COMP308-W2017-Lesson6B#readme"
+  }
 }

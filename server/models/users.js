@@ -37,7 +37,7 @@ let UserSchema = new Schema({
     default: Date.now
   }
 },{
-  collection: "users"
+  collection: "user"
 });
 
 let options = ({missingPasswordError: "Wrong Password"});

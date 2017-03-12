@@ -9,7 +9,7 @@ let UserModel = require('../models/users');
 let User = UserModel.User; // alias for User Model - User object
 
 // define the game model
-let contact = require('../models/games');
+let contact = require('../models/contactlist');
 
 // create a function to check if the user is authenticated
 function requireAuth(req, res, next) {
@@ -23,14 +23,14 @@ function requireAuth(req, res, next) {
 /* GET games List page. READ */
 router.get('/', requireAuth, (req, res, next) => {
   // find all games in the games collection
-  contact.find( (err, games) => {
+  contact.find( (err, contacts) => {
     if (err) {
       return console.error(err);
     }
     else {
       res.render('contactlists/index', {
-        title: 'Games',
-        games: games,
+        title: 'ContactList',
+        contacts: contacts,
         displayName: req.user.displayName
       });
     }
@@ -41,7 +41,7 @@ router.get('/', requireAuth, (req, res, next) => {
 //  GET the Game Details page in order to add a new Game
 router.get('/add', requireAuth, (req, res, next) => {
   res.render('contactlists/details', {
-    title: "Add a new Game",
+    title: "Add a new Contact",
     games: '',
     displayName: req.user.displayName
   });
@@ -61,7 +61,7 @@ router.post('/add', requireAuth, (req, res, next) => {
         console.log(err);
         res.end(err);
       } else {
-        res.redirect('/games');
+        res.redirect('/contactlist');
       }
     });
 });
@@ -111,7 +111,7 @@ router.post('/:id', requireAuth, (req, res, next) => {
         res.end(err);
       } else {
         // refresh the game List
-        res.redirect('/games');
+        res.redirect('/contactlist');
       }
     });
 
@@ -128,7 +128,7 @@ router.get('/delete/:id', requireAuth, (req, res, next) => {
         res.end(err);
       } else {
         // refresh the games list
-        res.redirect('/games');
+        res.redirect('/contactlist');
       }
     });
 });
